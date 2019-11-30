@@ -1,0 +1,31 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int num1 = sc.nextInt();
+	    int num2 = sc.nextInt();
+
+	    StringBuilder sb = new StringBuilder().append(num1 - num2);
+	    int digit = sb.charAt(0);
+	    
+	    Random rand = new Random();
+	    int rand_digit = 0;
+	    
+	    while( rand_digit == digit || rand_digit ==0 ){
+	        rand_digit = rand.nextInt(9);
+	    }
+	    
+	  // System.out.println("Random Digit: " + rand_digit);
+	   String str = Integer.toString(rand_digit); 
+	   sb.replace (0, 1, str);
+	   System.out.println(sb);
+	}
+	
+}
