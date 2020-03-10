@@ -1,0 +1,39 @@
+
+import java.lang.*;
+import java.io.*;
+import java.util.Stack;
+
+class Codechef
+{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int test = Integer.parseInt(br.readLine());
+		
+		while(test-->0) {
+			String str = br.readLine();
+			int n = compilers(str);
+			System.out.println(n);
+		}
+	}
+
+	public static int compilers(String str) {
+	   Stack<Integer> s = new Stack<>();
+		int i=0, count=0;
+		while(i<str.length()) {
+			int item = str.charAt(i);
+			
+			if (item=='<') {
+				s.push(item);
+			}
+			if (item=='>') 
+				if (s.empty())
+					break;
+				else
+					s.pop();
+			if (s.empty())
+				count = i+1;
+			i++;
+		}
+		return count; 
+	}
+}

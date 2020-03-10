@@ -1,0 +1,24 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Life
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+	    int n = Integer.parseInt(br.readLine());
+	    
+	    while (n --> 0){
+	        int num = Integer.parseInt(br.readLine());
+	        int j = 1;
+	        int count_zeroes = 0; 
+	        while (Math.pow(5, j) <= num){
+	            count_zeroes += (int)(num / Math.pow(5, j));
+	            j++;
+	        }
+	        System.out.println(count_zeroes);
+	    }
+	}
+}
